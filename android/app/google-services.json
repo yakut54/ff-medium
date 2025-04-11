@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "499722214027",
+    "project_id": "marta-ng-24fgxr",
+    "storage_bucket": "marta-ng-24fgxr.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:499722214027:android:5ee9c8a5a830b4ec50128e",
+        "android_client_info": {
+          "package_name": "com.martang.medium"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDIa1JIkriuyvXt-b07dCouJHvSECFqAZA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

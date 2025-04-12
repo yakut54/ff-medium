@@ -52,7 +52,7 @@ class _NavBarPageWidgetState extends State<NavBarPageWidget> {
             color: FlutterFlowTheme.of(context).secondaryBackground,
           ),
           child: custom_widgets.MartaNGNavBar(
-            width: 0.0,
+            width: double.infinity,
             height: 0.0,
           ),
         ),

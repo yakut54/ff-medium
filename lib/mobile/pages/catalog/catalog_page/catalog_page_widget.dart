@@ -60,10 +60,12 @@ class _CatalogPageWidgetState extends State<CatalogPageWidget> {
           }),
           Future(() async {
             _model.categories = await queryCategoriesRecordOnce(
-              queryBuilder: (categoriesRecord) => categoriesRecord.where(
-                'is_subcategory',
-                isEqualTo: false,
-              ),
+              queryBuilder: (categoriesRecord) => categoriesRecord
+                  .where(
+                    'is_subcategory',
+                    isEqualTo: false,
+                  )
+                  .orderBy('created_at', descending: true),
             );
           }),
           Future(() async {
@@ -230,10 +232,13 @@ class _CatalogPageWidgetState extends State<CatalogPageWidget> {
                               _model.forceCategories =
                                   await queryCategoriesRecordOnce(
                                 queryBuilder: (categoriesRecord) =>
-                                    categoriesRecord.where(
-                                  'is_subcategory',
-                                  isEqualTo: false,
-                                ),
+                                    categoriesRecord
+                                        .where(
+                                          'is_subcategory',
+                                          isEqualTo: false,
+                                        )
+                                        .orderBy('created_at',
+                                            descending: true),
                               );
                               _shouldSetState = true;
                             }),

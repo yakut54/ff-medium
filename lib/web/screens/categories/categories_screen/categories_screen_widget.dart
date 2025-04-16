@@ -45,7 +45,10 @@ class _CategoriesScreenWidgetState extends State<CategoriesScreenWidget> {
   @override
   Widget build(BuildContext context) {
     return StreamBuilder<List<CategoriesRecord>>(
-      stream: queryCategoriesRecord(),
+      stream: queryCategoriesRecord(
+        queryBuilder: (categoriesRecord) =>
+            categoriesRecord.orderBy('created_at', descending: true),
+      ),
       builder: (context, snapshot) {
         // Customize what your widget looks like when it's loading.
         if (!snapshot.hasData) {

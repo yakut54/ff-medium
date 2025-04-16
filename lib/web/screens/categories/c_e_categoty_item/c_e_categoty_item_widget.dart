@@ -365,6 +365,7 @@ class _CECategotyItemWidgetState extends State<CECategotyItemWidget> {
                                             : null,
                                         undeletable: false,
                                         isSubcategory: _model.switchValue,
+                                        createdAt: getCurrentTimestamp,
                                       ));
                                 }(),
                               );

@@ -55,6 +55,11 @@ class CategoriesRecord extends FirestoreRecord {
   bool get isSubcategory => _isSubcategory ?? false;
   bool hasIsSubcategory() => _isSubcategory != null;
 
+  // "created_at" field.
+  DateTime? _createdAt;
+  DateTime? get createdAt => _createdAt;
+  bool hasCreatedAt() => _createdAt != null;
+
   void _initializeFields() {
     _name = snapshotData['name'] as String?;
     _icon = snapshotData['icon'] as String?;
@@ -64,6 +69,7 @@ class CategoriesRecord extends FirestoreRecord {
     _undeletable = snapshotData['undeletable'] as bool?;
     _subcategories = getDataList(snapshotData['subcategories']);
     _isSubcategory = snapshotData['is_subcategory'] as bool?;
+    _createdAt = snapshotData['created_at'] as DateTime?;
   }
 
   static CollectionReference get collection =>
@@ -106,6 +112,7 @@ Map<String, dynamic> createCategoriesRecordData({
   DocumentReference? subcategoryOf,
   bool? undeletable,
   bool? isSubcategory,
+  DateTime? createdAt,
 }) {
   final firestoreData = mapToFirestore(
     <String, dynamic>{
@@ -114,6 +121,7 @@ Map<String, dynamic> createCategoriesRecordData({
       'subcategory_of': subcategoryOf,
       'undeletable': undeletable,
       'is_subcategory': isSubcategory,
+      'created_at': createdAt,
     }.withoutNulls,
   );
 
@@ -133,7 +141,8 @@ class CategoriesRecordDocumentEquality implements Equality<CategoriesRecord> {
         e1?.subcategoryOf == e2?.subcategoryOf &&
         e1?.undeletable == e2?.undeletable &&
         listEquality.equals(e1?.subcategories, e2?.subcategories) &&
-        e1?.isSubcategory == e2?.isSubcategory;
+        e1?.isSubcategory == e2?.isSubcategory &&
+        e1?.createdAt == e2?.createdAt;
   }
 
   @override
@@ -145,7 +154,8 @@ class CategoriesRecordDocumentEquality implements Equality<CategoriesRecord> {
         e?.subcategoryOf,
         e?.undeletable,
         e?.subcategories,
-        e?.isSubcategory
+        e?.isSubcategory,
+        e?.createdAt
       ]);
 
   @override

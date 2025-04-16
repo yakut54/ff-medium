@@ -84,7 +84,7 @@ class _NotConnectedComponentWidgetState
                           ),
                     ),
                     Text(
-                      'Проверьте сеть, отключите VPN   и перезагрузите приложение -  это должно помочь!!!11',
+                      'Проверьте сеть, отключите VPN   и перезагрузите приложение -  это должно помочь!!!11222',
                       textAlign: TextAlign.center,
                       style: FlutterFlowTheme.of(context).bodyMedium.override(
                             fontFamily: 'Vela Sans',
